@@ -158,6 +158,18 @@ int main()
         } else
         if (choise == 5)
         {
+            mat.main_diagonal();
+        } else
+        if (choise == 6)
+        {
+            mat.secondary_diagonal();
+        } else
+        if (choise == 7)
+        {
+            mat.sort_matrix();
+        } else
+        if (choise == 8)
+        {
             system("cls");
             cout << "Are you sure you want to exit(y/n)? ";
             cin >> choise;

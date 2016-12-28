@@ -8,6 +8,9 @@ void main_menu ()
     cout << "2.Add matrix;" << endl;
     cout << "3.Print matrix;" << endl;
     cout << "4.Print length of matrix's side(n);" << endl;
-    cout << "5.Exit" << endl;
+    cout << "5.The main diagonal;" << endl;
+    cout << "6.The second diagonal;" << endl;
+    cout << "7.Sort matris;" << endl;
+    cout << "8.Exit." << endl;
     cout << "Your choise: ";
 }

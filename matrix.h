@@ -108,6 +108,7 @@ private:
             {
                 fout << this->mat[this->n*i+j] << " ";
             }
+            fout << "\r\n";
         }
         fout.close();
     }
@@ -361,7 +362,7 @@ public:
         {
             for (int j = 0; j < this->n; j++)
             {
-                mat3[this->n*i+j] = mat[this->n*i+j] + mat2[this->n*i+j];
+                mat3[this->n*i+j] = this->mat[this->n*i+j] + mat2[this->n*i+j];
             }
         }
 
@@ -405,6 +406,108 @@ public:
         return mat3;
     }
 
+
+    /*
+        The Main Diagonal Method
+    */
+    void main_diagonal()
+    {
+        cout << "Would you like to print the main diagonal to file(\"main_diagonal.txt\")(y/n): ";
+        char answer;
+        cin >> answer;
+
+        if  (answer == 'y')
+        {
+            this->is_file("main_diagonal.txt");
+            ofstream fout;
+            fout.open("main_diagonal.txt");
+            for (int i = 0; i < this->n; i++)
+            {
+                fout << this->mat[this->n*i+i];
+            }
+            cout << "The main diagonal was successfully writed to file(\"main_diagonal.txt\")" << endl;
+            system("pause");
+        } else
+        if (answer == 'n')
+        {
+            for (int i = 0; i < this->n; i++)
+            {
+                cout << this->mat[this->n*i+i] << " ";
+            }
+            cout << endl;
+        }
+    }
+
+
+    /*
+        The secondary diagonal  Method
+    */
+    void secondary_diagonal()
+    {
+        cout << "Would you like to print the secondary diagonal to file(\"secondary_diagonal.txt\")(y/n): ";
+        char answer;
+        cin >> answer;
+
+        if  (answer == 'y')
+        {
+            this->is_file("secondary_diagonal.txt");
+            ofstream fout;
+            fout.open("secondary_diagonal.txt");
+            for (int i = 0; i < this->n; i++)
+            {
+                fout << this->mat[(i+1)*(this->n-1)+1];
+            }
+            cout << "The secondary diagonal was successfully writed to file(\"secondary_diagonal.txt\")" << endl;
+            system("pause");
+        } else
+        if (answer == 'n')
+        {
+            for (int i = 0; i < this->n; i++)
+            {
+                cout << this->mat[(i+1)*(this->n-1)+1] << " ";
+            }
+            cout << endl;
+        }
+    }
+
+
+    /*
+        Matrix Sort Method
+    */
+    void sort_matrix()
+    {
+        cout << "Would you like to print sorted matrix to file(\"matrix.txt.txt\")(y/n): ";
+        char answer;
+        cin >> answer;
+
+        for (int i = 0; i < this->n-1; i++)
+        {
+            for (int j = 0; j < this->n-1; j++)
+            {
+                if (mat[this->n*i+j] > mat[this->n*i+j+1])
+                {
+                    int temp = this->mat[this->n*i+j];
+                    this->mat[this->n*i+j] = this->mat[this->n*i+j+1];
+                    this->mat[this->n*i+j+1] = temp;
+                }
+            }
+        }
+
+        if (answer == 'y')
+        {
+            this->is_file();
+            this->file_print();
+            cout << "Sorted matrix was succeessfully writed to file(\"matrix.txt\")" << endl;
+        } else
+        if (answer == 'n')
+        {
+            this->console_print();
+            system("pause");
+        } else
+        {
+            cout << "Error: wrong input of data" << endl;
+        }
+    }
 };
 
 #endif // MATRIX_H_INCLUDED

@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1482835970 source:c:\users\nikolay\desktop\programs\oop\matrix\main.cpp
+1482910058 source:c:\users\nikolay\desktop\programs\oop\matrix\main.cpp
 	"matrix.h"
 
-1482835339 source:c:\users\nikolay\desktop\programs\oop\matrix\functions.cpp
+1482910064 source:c:\users\nikolay\desktop\programs\oop\matrix\functions.cpp
 	"matrix.h"
 
-1482836109 c:\users\nikolay\desktop\programs\oop\matrix\matrix.h
+1482910365 c:\users\nikolay\desktop\programs\oop\matrix\matrix.h
 	<iostream>
 	<fstream>
 	<cstring>
