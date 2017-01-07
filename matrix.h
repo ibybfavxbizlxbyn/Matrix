@@ -5,6 +5,7 @@
 #include <fstream>
 #include <cstring>
 #include <cstdlib>
+#include <conio.h>
 
 using namespace std;
 
@@ -236,8 +237,6 @@ public:
     /*
         Get Methods
     */
-
-    //File: "N.txt"
     int getN (bool in_file = false) const
     {
         if (in_file == true)
@@ -329,7 +328,7 @@ public:
             cout << endl;
         }
 
-        system("pause");
+        _getch();
         return mat3;
     }
 
@@ -402,7 +401,7 @@ public:
             cout << endl;
         }
 
-        system("pause");
+        _getch();
         return mat3;
     }
 
@@ -426,7 +425,7 @@ public:
                 fout << this->mat[this->n*i+i];
             }
             cout << "The main diagonal was successfully writed to file(\"main_diagonal.txt\")" << endl;
-            system("pause");
+            _getch();
         } else
         if (answer == 'n')
         {
@@ -458,7 +457,7 @@ public:
                 fout << this->mat[(i+1)*(this->n-1)+1];
             }
             cout << "The secondary diagonal was successfully writed to file(\"secondary_diagonal.txt\")" << endl;
-            system("pause");
+            _getch();
         } else
         if (answer == 'n')
         {
@@ -484,7 +483,7 @@ public:
         {
             for (int j = 0; j < this->n-1; j++)
             {
-                if (mat[this->n*i+j] > mat[this->n*i+j+1])
+                if (this->mat[this->n*i+j] > this->mat[this->n*i+j+1])
                 {
                     int temp = this->mat[this->n*i+j];
                     this->mat[this->n*i+j] = this->mat[this->n*i+j+1];
@@ -502,7 +501,7 @@ public:
         if (answer == 'n')
         {
             this->console_print();
-            system("pause");
+            _getch();
         } else
         {
             cout << "Error: wrong input of data" << endl;
